@@ -16,15 +16,15 @@ const Index = () => {
     <main className="min-h-screen">
       <Header />
       <HeroSection />
-      <IntroSection />
-      <StrategicFoundation />
+      {/* <IntroSection /> */}
+      {/* <StrategicFoundation /> */}
       <TeamApproach />
       <StatsSection />
-      <CTASection />
+      {/* <CTASection />
       <TailoredScope />
       <InsightsSection />
       <LetsTalkSection />
-      <FAQSection />
+      <FAQSection /> */}
       <Footer />
     </main>
   );

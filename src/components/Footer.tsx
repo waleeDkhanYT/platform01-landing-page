@@ -1,7 +1,9 @@
-import { motion } from 'framer-motion';
-import { Linkedin, Twitter, Facebook, Instagram } from 'lucide-react';
+import { Linkedin, Twitter, Facebook, Instagram, MapPin, Phone, Mail } from 'lucide-react';
+import LogoWhite from '@/assets/logowhite.png';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
+  let year = new Date().getFullYear();
   const footerLinks = {
     company: [
       { label: 'About Us', href: '#about' },
@@ -31,25 +33,28 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-navy text-white py-16 lg:py-20">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 mb-12">
+    <footer className="bg-navy text-white py-16 lg:py-16">
+      <div className="xl:container mx-auto px-4 lg:px-20">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-8 mb-12">
           {/* Logo & Description */}
-          <div className="lg:col-span-2">
-            <a href="/" className="flex items-center gap-2 mb-4">
+          <div>
+            {/* <a href="/" className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 rounded-full border-2 border-white/80 flex items-center justify-center">
                 <span className="text-white font-serif text-lg">P</span>
               </div>
               <span className="text-white font-sans text-sm font-medium tracking-wide">
-                Platform01<br/>
+                Platform01<br />
                 <span className="text-xs opacity-80">Consulting</span>
               </span>
-            </a>
-            <p className="text-white/60 font-sans text-sm max-w-sm leading-relaxed mb-6">
-              Building solid foundations for success through comprehensive feasibility studies 
-              and strategic consulting services in Saudi Arabia.
+            </a> */}
+            <Link to='/'>
+              <img src={LogoWhite} alt="Logo" className='w-44 h-[70px] pb-1 mb-1.5' />
+            </Link>
+            <hr className='opacity-50' />
+            <p className="text-white pt-2 font-sans text-sm max-w-sm leading-relaxed mb-6">
+              Platform01 Consulting is a premium Management Consulting firm partnering with visionary leaders across Corporations, Investment firms, Public Institutions, and other organizations seeking bespoke, high-impact services.
             </p>
-            
+
             {/* Social Links */}
             <div className="flex gap-3">
               {socialLinks.map((social) => (
@@ -65,62 +70,86 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Company Links */}
-          <div>
-            <h4 className="font-sans font-semibold text-sm uppercase tracking-wider mb-4">Company</h4>
-            <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link.label}>
-                  <a 
-                    href={link.href}
-                    className="text-white/60 hover:text-white text-sm font-sans transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          <div className='px-4'>
+            <div className='flex justify-between'>
+              <p className='text-2xl font-extrabold'>Kingdom of</p>
+              <p className='text-xl font-extrabold'>بلاتفورم 01</p>
+            </div>
+            <div className='flex justify-between pb-4'>
+              <p className='text-2xl font-extrabold'>Saudi Arabia</p>
+              <p className='text-xl font-extrabold'>كونسلتينغ أرابيا</p>
+            </div>
+            <hr className='opacity-50' />
+            <div className='flex flex-col gap-y-2 text-sm'>
+              <p className='flex pt-2'><MapPin size={60} className='pr-2' />Floor 5, 4055 King Fahd Road,
+                Samama Holding Tower, P.O. Box 12333,
+                Riyadh, Kingdom of Saudi Arabia</p>
+              <a className='flex cursor-pointer items-center' href="tel://+966114149349"><Phone size={30} className='pr-2'
+              />+966 11 414 9349</a>
+              <a className='flex cursor-pointer items-center' href="mailto://info@p01cglobal.com"><Mail size={30} className='pr-2'
+              />info@p01cglobal.com</a>
+            </div>
           </div>
 
-          {/* Services Links */}
-          <div>
-            <h4 className="font-sans font-semibold text-sm uppercase tracking-wider mb-4">Services</h4>
-            <ul className="space-y-3">
-              {footerLinks.services.map((link) => (
-                <li key={link.label}>
-                  <a 
-                    href={link.href}
-                    className="text-white/60 hover:text-white text-sm font-sans transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <div className='grid grid-cols-1 lg:grid-cols-2'>
+            {/* Company Links */}
+            <div>
+              <h4 className="font-sans font-semibold text-sm uppercase tracking-wider mb-4">Company</h4>
+              <ul className="space-y-3">
+                {footerLinks.company.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="text-white hover:text-white/60 text-sm font-sans transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Resources Links */}
-          <div>
-            <h4 className="font-sans font-semibold text-sm uppercase tracking-wider mb-4">Resources</h4>
-            <ul className="space-y-3">
-              {footerLinks.resources.map((link) => (
-                <li key={link.label}>
-                  <a 
-                    href={link.href}
-                    className="text-white/60 hover:text-white text-sm font-sans transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            {/* Services Links */}
+            <div className='pt-4 lg:pt-0'>
+              <h4 className="font-sans font-semibold text-sm uppercase tracking-wider mb-4">Services</h4>
+              <ul className="space-y-3">
+                {footerLinks.services.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="text-white hover:text-white/60 text-sm font-sans transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Resources Links */}
+            <div className='pt-4'>
+              <h4 className="font-sans font-semibold text-sm uppercase tracking-wider mb-4">Resources</h4>
+              <ul className="space-y-3">
+                {footerLinks.resources.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="text-white hover:text-white/60 text-sm font-sans transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+        <hr className='opacity-50' />
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-white/40 text-sm font-sans">
-            © 2024 Platform01 Consulting. All rights reserved.
+            ©{year} Platform01 Consulting. All rights reserved.
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-white/40 hover:text-white text-sm font-sans transition-colors">

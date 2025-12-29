@@ -1,6 +1,12 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { ArrowRight } from 'lucide-react';
+
+import Emp1 from '@/assets/emp1.avif';
+import Emp2 from '@/assets/emp2.avif';
+import Emp3 from '@/assets/emp3.avif';
+import Emp4 from '@/assets/emp4.avif';
 
 const TeamApproach = () => {
   const ref = useRef(null);
@@ -8,30 +14,34 @@ const TeamApproach = () => {
 
   const teamMembers = [
     {
-      name: "Ahmed Al-Rashid",
-      role: "Managing Director",
-      description: "20+ years in strategic consulting and feasibility analysis across MENA region."
+      name: "Saad Jilani",
+      role: "Senior Practitioner and SME",
+      description: "Energy, Industrials, & Aviation",
+      image: Emp1
     },
     {
-      name: "Sarah Mitchell",
-      role: "Head of Research",
-      description: "Expert in market analysis and data-driven feasibility assessments."
+      name: "Shwetabh Sameer, CFA",
+      role: "Senior Practitioner and SME",
+      description: "Technology & Venture Capital",
+      image: Emp2
     },
     {
-      name: "Omar Hassan",
-      role: "Financial Director",
-      description: "Specialist in financial modeling and investment viability studies."
+      name: "Shafi Akhund, FMVA",
+      role: "Senior Consultant",
+      description: "Strategy & Advisory",
+      image: Emp3
     },
     {
-      name: "Dr. Fatima Al-Saud",
-      role: "Technical Advisor",
-      description: "PhD in Economics with focus on Saudi Vision 2030 projects."
+      name: "Mohammad Ovais, CFA",
+      role: "Senior Practitioner and SME",
+      description: "Infrastructure & Healthcare",
+      image: Emp4
     }
   ];
 
   return (
     <section ref={ref} className="py-20 lg:py-28 bg-background" id="services">
-      <div className="container mx-auto px-4 lg:px-8">
+      <div className="xl:container mx-auto px-4 lg:px-20">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -40,10 +50,10 @@ const TeamApproach = () => {
           className="max-w-2xl mb-16"
         >
           <p className="text-sm font-sans uppercase tracking-[0.15em] text-muted-foreground mb-4">
-            OUR EXPERTISE
+            Our Feasibility Study Firm Consulting Team
           </p>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight text-foreground">
-            Our Unique Practitioner-Driven Approach: Feasibility Study Consulting Services
+          <h2 className="font-serif font-bold text-3xl md:text-4xl lg:text-5xl leading-tight text-foreground">
+            Our Unique<br /> "Practitioner-Driven"<br /> Approach - Feasibility<br /> Study Consulting<br /> Services
           </h2>
         </motion.div>
 
@@ -52,11 +62,9 @@ const TeamApproach = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-muted-foreground font-sans max-w-3xl mb-16 leading-relaxed"
+          className="flex text-[#838C94] font-sans mb-16 leading-relaxed"
         >
-          Our team combines decades of hands-on experience with cutting-edge analytical 
-          methodologies to deliver feasibility studies that stand up to scrutiny and 
-          drive successful project outcomes.
+          <span className='pl-0 lg:pl-80 text-sm lg:text-base'>Our Feasibility Study practice is based on our unique model of "Practitioner-Driven" approach that brings together Relevant Sector Experience from Global Fortune 500 Corporations and Global Financial Institutions with years of Financial Expertise of consulting in the region.</span>
         </motion.p>
 
         {/* Team Grid */}
@@ -70,20 +78,24 @@ const TeamApproach = () => {
               className="group"
             >
               {/* Image Placeholder */}
-              <div className="aspect-[3/4] bg-secondary rounded-lg mb-4 overflow-hidden relative">
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute inset-0 flex items-center justify-center">
+              <div className="aspect-[3/4] bg-[#F3F5F7] rounded-lg mb-4 overflow-hidden relative">
+                {/* <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" /> */}
+                <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                {/* <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-24 h-24 rounded-full bg-muted-foreground/20 flex items-center justify-center">
-                    <span className="font-serif text-3xl text-muted-foreground">
-                      {member.name.charAt(0)}
-                    </span>
                   </div>
-                </div>
+                </div> */}
               </div>
-              
-              <h3 className="font-serif text-xl text-foreground mb-1">{member.name}</h3>
-              <p className="text-sm text-primary font-sans font-medium mb-2">{member.role}</p>
-              <p className="text-sm text-muted-foreground font-sans">{member.description}</p>
+
+              <h3 className="font-serif text-2xl text-foreground mb-1 font-bold">{member.name}</h3>
+              <p className="text-sm text-[#838C94] font-sans font-medium">{member.description ? member.description : ""}</p>
+              <p className="text-sm text-[#838C94] font-sans font-medium mb-2">{member.role}</p>
+              <hr />
+              <div className='flex justify-between'>
+                <button className='pt-2'>View Bio</button>
+                <ArrowRight color='#838C94' className='pt-2' size={35} />
+              </div>
+              {/* <p className="text-sm text-muted-foreground font-sans">{member.description}</p> */}
             </motion.div>
           ))}
         </div>
