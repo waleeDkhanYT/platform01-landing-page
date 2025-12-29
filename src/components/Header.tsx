@@ -1,62 +1,67 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import Logo from '../assets/logo.png';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const navItems = [
-    { 
-      label: 'About', 
+    {
+      label: 'About',
       href: '#about',
       dropdown: ['Our Story', 'Leadership', 'Careers']
     },
-    { 
-      label: 'Services', 
+    {
+      label: 'Services',
       href: '#services',
       dropdown: ['Feasibility Studies', 'Market Research', 'Financial Analysis']
     },
-    { 
-      label: 'Insights', 
+    {
+      label: 'Insights',
       href: '#insights',
       dropdown: ['Blog', 'Case Studies', 'Reports']
     },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Credentials', href: '#credentials' },
   ];
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-50">
-      <div className="container mx-auto px-4 lg:px-8">
-        <nav className="flex items-center justify-between py-6">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#F3F5F7]">
+      <div className="xl:container mx-auto px-4 lg:px-20">
+        <nav className="flex items-center justify-between">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2">
+          {/* <a href="/" className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-full border-2 border-white/80 flex items-center justify-center">
-              <span className="text-white font-serif text-lg">P</span>
+              <span className="text-black font-serif text-lg">P</span>
             </div>
-            <span className="text-white font-sans text-sm font-medium tracking-wide">
-              Platform01<br/>
+            <span className="text-black font-sans text-sm font-medium tracking-wide">
+              Platform01<br />
               <span className="text-xs opacity-80">Consulting</span>
             </span>
-          </a>
+          </a> */}
+          <Link to='/'>
+            <img src={Logo} alt="Logo" className='w-48 h-[75px]' />
+          </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-2 text-[#000]">
             {navItems.map((item) => (
-              <div 
+              <div
                 key={item.label}
                 className="relative"
                 onMouseEnter={() => item.dropdown && setOpenDropdown(item.label)}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                <a 
+                <a
                   href={item.href}
-                  className="text-white/90 hover:text-white text-sm font-sans font-medium transition-colors flex items-center gap-1"
+                  className="hover:bg-white p-4 text-sm font-sans font-medium transition-colors flex items-center"
                 >
                   {item.label}
                   {item.dropdown && <ChevronDown className="w-3 h-3" />}
                 </a>
-                
+
                 {item.dropdown && openDropdown === item.label && (
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
@@ -79,10 +84,13 @@ const Header = () => {
             ))}
           </div>
 
+          <button
+            className="hidden lg:block bg-primary text-white p-4">Talk to an Expert</button>
+
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden text-white p-2"
+            className="lg:hidden p-2"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -110,6 +118,8 @@ const Header = () => {
                   {item.label}
                 </a>
               ))}
+              <button
+                className="mt-2 text-sm bg-primary text-white p-4">Talk to an Expert</button>
             </div>
           </motion.div>
         )}

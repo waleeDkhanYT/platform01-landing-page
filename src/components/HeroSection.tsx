@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import heroBg from '@/assets/hero-bg.jpg';
+import heroBg from '@/assets/feasibility-study.avif';
+import PCAwards from '@/assets/pc-award.png';
 
 const HeroSection = () => {
   const [formData, setFormData] = useState({
@@ -22,45 +23,44 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen bg-navy overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden">
       {/* Background Image */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroBg})` }}
       >
-        <div className="absolute inset-0 bg-navy/80" />
+        {/* <div className="absolute inset-0 bg-navy/80" /> */}
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 lg:px-8 pt-32 pb-20 lg:pt-40 lg:pb-24">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+      <div className="relative z-10 xl:container mx-auto px-4 lg:px-20 pb-20 lg:pt-36 lg:pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-6 xl:gap-16 items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-white"
+            className="text-white pt-20 lg:pt-0 col-span-2"
           >
-            <p className="text-sm font-sans uppercase tracking-[0.2em] text-white/70 mb-6">
-              Feasibility Study Consultant
+            <p className="text-xs font-sans uppercase tracking-[0.2em] text-white/70 mb-6">
+              Market Feasibility Study Services
             </p>
-            
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] mb-8">
-              Building Solid Foundations for Success – Feasibility Study Strategist
+
+            <h1 className="font-serif font-extrabold text-2xl md:text-4xl lg:text-5xl xl:text-6xl leading-[1.1] mb-8">
+              Building Solid Foundations for Success - Feasibility Study Strategist
             </h1>
 
             <div className="flex items-center gap-4 mb-8">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
-                  <span className="text-xs">★</span>
-                </div>
-                <span className="text-sm text-white/80">4.9 rated on Clutch</span>
+                <img src={PCAwards} alt='PC Awards' className='w-20 lg:w-28 h-12 lg:h-16' />
+                {/* <div className="flex items-center justify-center">
+                </div> */}
+                <span className="text-sm text-white">
+                  <p>Top Strategist GCC</p>
+                  <p>Industrials, Healthcare & Technology</p>
+                </span>
               </div>
             </div>
-
-            <p className="text-white/70 text-sm font-sans max-w-md">
-              Trusted by over 500+ clients worldwide for comprehensive feasibility studies and strategic consulting.
-            </p>
           </motion.div>
 
           {/* Right Form */}
@@ -69,14 +69,10 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <div className="bg-white rounded-lg p-8 lg:p-10 shadow-2xl">
-              <h2 className="font-serif text-2xl lg:text-3xl text-foreground mb-2">
-                Schedule a Meeting
+            <div className="bg-white rounded-lg px-6 py-4 lg:px-8 lg:py-6 shadow-2xl">
+              <h2 className="font-serif font-bold text-2xl lg:text-3xl text-foreground mb-2">
+                Submit an Inquiry
               </h2>
-              <p className="text-muted-foreground text-sm mb-6">
-                Let's discuss your project requirements
-              </p>
-
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <input
@@ -134,7 +130,7 @@ const HeroSection = () => {
                   type="submit"
                   className="w-full bg-primary text-primary-foreground py-4 rounded-md font-sans font-medium text-sm hover:bg-primary/90 transition-colors"
                 >
-                  Book a Free Consultation
+                  Submit an Inquiry
                 </button>
               </form>
 
@@ -150,7 +146,7 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 text-xs font-sans tracking-widest uppercase"
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white/50 text-xs font-sans tracking-widest uppercase"
         >
           Scroll to explore
         </motion.div>
