@@ -70,7 +70,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className='px-4'>
+          <div className='px-0 lg:px-4'>
             <div className='flex justify-between'>
               <p className='text-2xl font-extrabold'>Kingdom of</p>
               <p className='text-xl font-extrabold'>بلاتفورم 01</p>
@@ -91,58 +91,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className='grid grid-cols-1 lg:grid-cols-2'>
-            {/* Company Links */}
-            <div>
-              <h4 className="font-sans font-semibold text-sm uppercase tracking-wider mb-4">Company</h4>
-              <ul className="space-y-3">
-                {footerLinks.company.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-white hover:text-white/60 text-sm font-sans transition-colors"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Services Links */}
-            <div className='pt-4 lg:pt-0'>
-              <h4 className="font-sans font-semibold text-sm uppercase tracking-wider mb-4">Services</h4>
-              <ul className="space-y-3">
-                {footerLinks.services.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-white hover:text-white/60 text-sm font-sans transition-colors"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Resources Links */}
-            <div className='pt-4'>
-              <h4 className="font-sans font-semibold text-sm uppercase tracking-wider mb-4">Resources</h4>
-              <ul className="space-y-3">
-                {footerLinks.resources.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-white hover:text-white/60 text-sm font-sans transition-colors"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+         
         </div>
 
         {/* Bottom Bar */}

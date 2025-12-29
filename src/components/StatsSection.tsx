@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useCallback } from 'react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 
 const StatsSection = () => {
@@ -56,14 +56,14 @@ const StatsSection = () => {
           className="text-center mb-12"
         >
           <div className='flex flex-col lg:flex-row'>
-            <span className="text-md text-[#838C94] uppercase pt-16">Our Credentials</span>
+            <span className="text-md text-[#838C94] capitalize pt-16">Our Credentials</span>
             <h2 className="font-serif px-0 lg:px-16 xl:px-40 text-start font-extrabold text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
               Decades of experience.<br />
               Billions in advisory value.
             </h2>
           </div>
           <hr />
-          <div className='flex justify-start lg:justify-center text-start'>
+          <div className='mr-[100px] flex justify-start lg:justify-center text-start'>
             <p className='w-9/12 lg:w-6/12 pt-6 text-[#838C94]'>
               We bring a history of performance across corporate strategy, capital structuring, and investment advisory — built on deep expertise and delivered with precision as a Feasibility Study Professional.
             </p>
@@ -71,15 +71,15 @@ const StatsSection = () => {
           <div className="flex justify-end gap-3">
             <button
               onClick={scrollPrev}
-              className="w-11 h-11 rounded-full border border-foreground/30 flex items-center justify-center hover:bg-foreground/5 transition-colors"
+              className="w-11 h-11 rounded flex items-center justify-center bg-white hover:bg-foreground/5 transition-colors"
             >
-              <ArrowLeft className="w-5 h-5 text-foreground" />
+              <ChevronLeft className="w-5 h-5 text-foreground" />
             </button>
             <button
               onClick={scrollNext}
-              className="w-11 h-11 rounded-full border border-foreground/30 flex items-center justify-center hover:bg-foreground/5 transition-colors"
+              className="w-11 h-11 rounded flex items-center justify-center bg-white hover:bg-foreground/5 transition-colors"
             >
-              <ArrowRight className="w-5 h-5 text-foreground" />
+              <ChevronRight className="w-5 h-5 text-foreground" />
             </button>
           </div>
         </motion.div>

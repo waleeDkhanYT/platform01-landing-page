@@ -40,8 +40,13 @@ const TeamApproach = () => {
   ];
 
   return (
-    <section ref={ref} className="py-20 lg:py-28 bg-background" id="services">
-      <div className="xl:container mx-auto px-4 lg:px-20">
+    <div className="xl:container mx-auto px-4 lg:px-20">
+      <hr/>
+    <p className="text-[13px] pt-4 font-sans font-semibold capitalize">
+            Our Feasibility Study Firm Consulting Team
+          </p>
+          <section ref={ref} className="py-20 lg:py-28 bg-background" id="services">
+      <div>
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -49,9 +54,7 @@ const TeamApproach = () => {
           transition={{ duration: 0.6 }}
           className="max-w-2xl mb-16"
         >
-          <p className="text-sm font-sans uppercase tracking-[0.15em] text-muted-foreground mb-4">
-            Our Feasibility Study Firm Consulting Team
-          </p>
+          
           <h2 className="font-serif font-bold text-3xl md:text-4xl lg:text-5xl leading-tight text-foreground">
             Our Unique<br /> "Practitioner-Driven"<br /> Approach - Feasibility<br /> Study Consulting<br /> Services
           </h2>
@@ -64,7 +67,7 @@ const TeamApproach = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="flex text-[#838C94] font-sans mb-16 leading-relaxed"
         >
-          <span className='pl-0 lg:pl-80 text-sm lg:text-base'>Our Feasibility Study practice is based on our unique model of "Practitioner-Driven" approach that brings together Relevant Sector Experience from Global Fortune 500 Corporations and Global Financial Institutions with years of Financial Expertise of consulting in the region.</span>
+          <span className='pl-0 lg:pl-80 text-[13px] lg:text-[14px] tracking-wide'>Our Feasibility Study practice is based on our unique model of "Practitioner-Driven" approach that brings together Relevant Sector Experience from Global Fortune 500 Corporations and Global Financial Institutions with years of Financial Expertise of consulting in the region.</span>
         </motion.p>
 
         {/* Team Grid */}
@@ -101,6 +104,8 @@ const TeamApproach = () => {
         </div>
       </div>
     </section>
+    </div>
+   
   );
 };
 

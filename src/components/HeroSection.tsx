@@ -2,18 +2,52 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import heroBg from '@/assets/feasibility-study.avif';
 import PCAwards from '@/assets/pc-award.png';
+import { MdArrowForwardIos } from "react-icons/md";
+import Award1 from '@/assets/award1.jpg';
+import Award2 from '@/assets/award2.png';
+import Award3 from '@/assets/award3.webp';
+type FormDataType = {
+  name: string;
+  email: string;
+  phone: string;
+  company: string;
+  message: string;
+};
+
+type TouchedType = {
+  [K in keyof FormDataType]?: boolean;
+};
 
 const HeroSection = () => {
-  const [formData, setFormData] = useState({
+  
+  const [formData, setFormData] = useState<FormDataType>({
     name: '',
     email: '',
     phone: '',
     company: '',
-    message: ''
+    message: '',
   });
+  const [touched, setTouched] = useState<TouchedType>({});
+  const handleBlur = (
+    e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setTouched(prev => ({ ...prev, [e.target.name]: true }));
+  };
+  
+  const isEmpty = (field: keyof FormDataType) =>
+    formData[field].trim() === '';
+
+
+  const isFormValid =
+    !isEmpty('name') &&
+    !isEmpty('email') &&
+    !isEmpty('phone') &&
+    !isEmpty('company') &&
+    !isEmpty('message');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!isFormValid) return;
     console.log('Form submitted:', formData);
     // Handle form submission
   };
@@ -26,7 +60,7 @@ const HeroSection = () => {
     <section className="relative min-h-screen overflow-hidden">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat h-[97%]"
         style={{ backgroundImage: `url(${heroBg})` }}
       >
         {/* <div className="absolute inset-0 bg-navy/80" /> */}
@@ -34,15 +68,15 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 xl:container mx-auto px-4 lg:px-20 pb-20 lg:pt-36 lg:pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-6 xl:gap-16 items-center">
-          {/* Left Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-6 xl:gap-4 items-center">
+          
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-white pt-20 lg:pt-0 col-span-2"
+            className="text-white pt-20 lg:pt-0 "
           >
-            <p className="text-xs font-sans uppercase tracking-[0.2em] text-white/70 mb-6">
+            <p className="text-xs font-sans capitalize tracking-[0.2em] text-white/70 mb-6">
               Market Feasibility Study Services
             </p>
 
@@ -53,103 +87,98 @@ const HeroSection = () => {
             <div className="flex items-center gap-4 mb-8">
               <div className="flex items-center gap-2">
                 <img src={PCAwards} alt='PC Awards' className='w-20 lg:w-28 h-12 lg:h-16' />
-                {/* <div className="flex items-center justify-center">
-                </div> */}
+           
                 <span className="text-sm text-white">
                   <p>Top Strategist GCC</p>
                   <p>Industrials, Healthcare & Technology</p>
                 </span>
               </div>
             </div>
+            
           </motion.div>
 
-          {/* Right Form */}
+        
+         
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className='flex flex-col lg:flex-row items-center lg:gap-x-3'
           >
-            <div className="bg-white rounded-lg px-6 py-4 lg:px-8 lg:py-6 shadow-2xl">
-              <h2 className="font-serif font-bold text-2xl lg:text-3xl text-foreground mb-2">
+           <div className='flex gap-x-3 lg:flex-col'>
+              <img src={Award1} alt='Award' className='w-28 lg:w-40 h-28 lg:h-32 mb-4 lg:mb-6 rounded-md object-cover shadow-2xl' />
+              <img src={Award2} alt='Award' className='w-28 lg:w-40 h-28 lg:h-32 mb-4 lg:mb-6 rounded-md object-cover shadow-2xl' />
+              <img src={Award3} alt='Award' className='w-28 lg:w-40 h-28 lg:h-32 mb-4 lg:mb-6 rounded-md object-cover shadow-2xl' />
+           </div>
+            <div className="bg-white px-6 py-6 shadow-2xl w-full">
+              <h2 className="font-serif font-bold text-3xl mb-3">
                 Submit an Inquiry
               </h2>
+
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name *"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-secondary border-0 rounded-md text-sm font-sans placeholder:text-muted-foreground focus:ring-2 focus:ring-primary focus:outline-none"
-                  />
-                </div>
-                <div>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email Address *"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-secondary border-0 rounded-md text-sm font-sans placeholder:text-muted-foreground focus:ring-2 focus:ring-primary focus:outline-none"
-                  />
-                </div>
-                <div>
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Phone Number"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-secondary border-0 rounded-md text-sm font-sans placeholder:text-muted-foreground focus:ring-2 focus:ring-primary focus:outline-none"
-                  />
-                </div>
-                <div>
-                  <input
-                    type="text"
-                    name="company"
-                    placeholder="Company Name"
-                    value={formData.company}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-secondary border-0 rounded-md text-sm font-sans placeholder:text-muted-foreground focus:ring-2 focus:ring-primary focus:outline-none"
-                  />
-                </div>
+
+                {(
+                  [
+                    ['name', 'Full Name'],
+                    ['email', 'Email'],
+                    ['phone', 'Phone'],
+                    ['company', 'Company'],
+                  ] as const
+                ).map(([field, label]) => (
+                  <div key={field}>
+                    <input
+                      type="text"
+                      name={field}
+                      placeholder={label}
+                      value={formData[field]}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      className="w-full px-1 text-sm py-3 border-b border-gray-300 focus:ring-2 focus:ring-primary"
+                    />
+                    {touched[field] && isEmpty(field) && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {label} is required
+                      </p>
+                    )}
+                  </div>
+                ))}
+
+             
                 <div>
                   <textarea
                     name="message"
-                    placeholder="Tell us about your project..."
+                    rows={4}
+                    placeholder="Message"
                     value={formData.message}
                     onChange={handleChange}
-                    rows={4}
-                    className="w-full px-4 py-3 bg-secondary border-0 rounded-md text-sm font-sans placeholder:text-muted-foreground focus:ring-2 focus:ring-primary focus:outline-none resize-none"
+                    onBlur={handleBlur}
+                    className="w-full px-1 text-sm py-3 border-b border-gray-300  focus:ring-2 focus:ring-primary resize-none"
                   />
+                  {touched.message && isEmpty('message') && (
+                    <p className="text-red-500 text-sm mt-1">
+                      Message is required
+                    </p>
+                  )}
                 </div>
+
                 <button
                   type="submit"
-                  className="w-full bg-primary text-primary-foreground py-4 rounded-md font-sans font-medium text-sm hover:bg-primary/90 transition-colors"
+                  disabled={!isFormValid}
+                  className={`w-full flex justify-between items-center px-[17px] py-[12px] text-sm font-medium transition ${
+                    isFormValid
+                      ? 'bg-primary text-white hover:bg-primary/90'
+                      : 'bg-primary opacity-50 text-white cursor-not-allowed'
+                  }`}
                 >
-                  Submit an Inquiry
+                  <p>Submit an inquiry</p>
+                  <MdArrowForwardIos />
                 </button>
               </form>
 
-              <p className="text-xs text-muted-foreground mt-4 text-center">
-                By submitting, you agree to our Privacy Policy
-              </p>
+            
             </div>
           </motion.div>
         </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white/50 text-xs font-sans tracking-widest uppercase"
-        >
-          Scroll to explore
-        </motion.div>
       </div>
     </section>
   );
