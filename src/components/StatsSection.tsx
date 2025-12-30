@@ -46,7 +46,7 @@ const StatsSection = () => {
   ];
 
   return (
-    <div className='bg-[#F3F5F7]'>
+    <div className='bg-[#F3F5F7] -mt-4'>
       <div className="xl:container mx-auto px-4 lg:px-[68px]">
         {/* <span>1</span> */}
         <p className="pt-4">
