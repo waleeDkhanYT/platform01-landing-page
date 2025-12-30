@@ -49,10 +49,10 @@ const StatsSection = () => {
     <div className='bg-[#F3F5F7] -mt-4'>
       <div className="xl:container mx-auto px-4 lg:px-[68px]">
         {/* <span>1</span> */}
-        <p className="pt-4">
+        {/* <p className="pt-4">
           <hr />
           <p className='mt-4 text-[13px] font-sans font-semibold capitalize'>Our Credentials</p>
-        </p>
+        </p> */}
 
         <section ref={sectionRef} className="py-12 lg:py-16">
           {/* Header */}
@@ -63,7 +63,8 @@ const StatsSection = () => {
             className="text-center mb-12"
           >
             <div className='flex flex-col lg:flex-row'>
-              <h2 className="font-serif px-0 lg:px-48 xl:px-[310px] text-start font-extrabold text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
+              <p className='text-sm font-sans font-semibold capitalize pt-20 text-[#838C94]'>Our Credentials</p>
+              <h2 className="font-serif px-0 lg:px-48 xl:px-52 text-start font-extrabold text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
                 Decades of experience.<br />
                 Billions in advisory value.
               </h2>
