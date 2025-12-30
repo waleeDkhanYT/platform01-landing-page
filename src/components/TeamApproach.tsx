@@ -41,7 +41,7 @@ const TeamApproach = () => {
 
   return (
     <div className="xl:container mx-auto px-4 lg:px-[68px]">
-      <hr />
+      <hr className="mt-12" />
       <p className="text-[13px] pt-4 font-sans font-semibold capitalize">
         Our Feasibility Study Firm Consulting Team
       </p>
