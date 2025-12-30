@@ -33,11 +33,11 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-navy text-white py-16 lg:py-16">
-      <div className="xl:container mx-auto px-4 lg:px-20">
+    <footer className="bg-navy text-white py-8 lg:py-5">
+      <div className="xl:container mx-auto px-4 lg:px-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-8 mb-12">
           {/* Logo & Description */}
-          <div>
+          <div className='pt-0 lg:pt-6'>
             {/* <a href="/" className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 rounded-full border-2 border-white/80 flex items-center justify-center">
                 <span className="text-white font-serif text-lg">P</span>
@@ -70,14 +70,14 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className='px-0 lg:px-4'>
+          <div className='px-0 lg:px-4 pt-0 lg:pt-6'>
             <div className='flex justify-between'>
-              <p className='text-2xl font-extrabold'>Kingdom of</p>
-              <p className='text-xl font-extrabold'>بلاتفورم 01</p>
+              <p className='text-2xl font-bold'>Kingdom of</p>
+              <p className='text-xl font-bold'>بلاتفورم 01</p>
             </div>
             <div className='flex justify-between pb-4'>
-              <p className='text-2xl font-extrabold'>Saudi Arabia</p>
-              <p className='text-xl font-extrabold'>كونسلتينغ أرابيا</p>
+              <p className='text-2xl font-bold'>Saudi Arabia</p>
+              <p className='text-xl font-bold'>كونسلتينغ أرابيا</p>
             </div>
             <hr className='opacity-50' />
             <div className='flex flex-col gap-y-2 text-sm'>
@@ -91,7 +91,7 @@ const Footer = () => {
             </div>
           </div>
 
-         
+
         </div>
 
         {/* Bottom Bar */}
