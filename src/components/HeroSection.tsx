@@ -2,10 +2,11 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import heroBg from '@/assets/feasibility-study.avif';
 import PCAwards from '@/assets/pc-award.png';
-import { MdArrowForwardIos } from "react-icons/md";
+import { ChevronRight } from "lucide-react";
 import Award1 from '@/assets/award1.jpg';
 import Award2 from '@/assets/award2.png';
 import Award3 from '@/assets/award3.webp';
+
 type FormDataType = {
   name: string;
   email: string;
@@ -19,7 +20,7 @@ type TouchedType = {
 };
 
 const HeroSection = () => {
-  
+
   const [formData, setFormData] = useState<FormDataType>({
     name: '',
     email: '',
@@ -33,7 +34,7 @@ const HeroSection = () => {
   ) => {
     setTouched(prev => ({ ...prev, [e.target.name]: true }));
   };
-  
+
   const isEmpty = (field: keyof FormDataType) =>
     formData[field].trim() === '';
 
@@ -60,16 +61,16 @@ const HeroSection = () => {
     <section className="relative min-h-screen overflow-hidden">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat h-[97%]"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat h-[96%]"
         style={{ backgroundImage: `url(${heroBg})` }}
       >
         {/* <div className="absolute inset-0 bg-navy/80" /> */}
       </div>
 
       {/* Content */}
-      <div className="relative z-10 xl:container mx-auto px-4 lg:px-20 pb-20 lg:pt-36 lg:pb-24">
+      <div className="relative z-10 xl:container mx-auto px-4 lg:px-16 pb-20 lg:pt-36 lg:pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-6 xl:gap-4 items-center">
-          
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -87,34 +88,34 @@ const HeroSection = () => {
             <div className="flex items-center gap-4 mb-8">
               <div className="flex items-center gap-2">
                 <img src={PCAwards} alt='PC Awards' className='w-20 lg:w-28 h-12 lg:h-16' />
-           
+
                 <span className="text-sm text-white">
                   <p>Top Strategist GCC</p>
                   <p>Industrials, Healthcare & Technology</p>
                 </span>
               </div>
             </div>
-            
+
           </motion.div>
 
-        
-         
+
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className='flex flex-col lg:flex-row items-center lg:gap-x-3'
+            className='flex flex-col lg:flex-row items-center justify-between'
           >
-           <div className='flex gap-x-3 lg:flex-col'>
-              <img src={Award1} alt='Award' className='w-28 lg:w-40 h-28 lg:h-32 mb-4 lg:mb-6 rounded-md object-cover shadow-2xl' />
-              <img src={Award2} alt='Award' className='w-28 lg:w-40 h-28 lg:h-32 mb-4 lg:mb-6 rounded-md object-cover shadow-2xl' />
-              <img src={Award3} alt='Award' className='w-28 lg:w-40 h-28 lg:h-32 mb-4 lg:mb-6 rounded-md object-cover shadow-2xl' />
-           </div>
-            <div className="bg-white px-6 py-6 shadow-2xl w-full">
+            <div className='flex gap-x-3 lg:flex-col'>
+              <img src={Award1} alt='Award' className='xl:ml-20 w-20 lg:w-28 h-24 lg:h-28 mb-4 lg:mb-6 rounded-md object-cover shadow-2xl' />
+              <img src={Award2} alt='Award' className='xl:ml-20 w-20 lg:w-28 h-24 lg:h-28 mb-4 lg:mb-6 rounded-md object-cover shadow-2xl' />
+              <img src={Award3} alt='Award' className='xl:ml-20 w-20 lg:w-28 h-24 lg:h-28 mb-4 lg:mb-6 rounded-md object-cover shadow-2xl' />
+            </div>
+            <div className="bg-white px-6 py-6 shadow-2xl w-full lg:w-[65%]">
               <h2 className="font-serif font-bold text-3xl mb-3">
                 Submit an Inquiry
               </h2>
-
+              <hr />
               <form onSubmit={handleSubmit} className="space-y-4">
 
                 {(
@@ -143,7 +144,7 @@ const HeroSection = () => {
                   </div>
                 ))}
 
-             
+
                 <div>
                   <textarea
                     name="message"
@@ -164,18 +165,17 @@ const HeroSection = () => {
                 <button
                   type="submit"
                   disabled={!isFormValid}
-                  className={`w-full flex justify-between items-center px-[17px] py-[12px] text-sm font-medium transition ${
-                    isFormValid
-                      ? 'bg-primary text-white hover:bg-primary/90'
-                      : 'bg-primary opacity-50 text-white cursor-not-allowed'
-                  }`}
+                  className={`w-full flex justify-between items-center px-[17px] py-[12px] text-sm font-medium transition ${isFormValid
+                    ? 'bg-primary text-white hover:bg-primary/90'
+                    : 'bg-primary opacity-50 text-white cursor-not-allowed'
+                    }`}
                 >
                   <p>Submit an inquiry</p>
-                  <MdArrowForwardIos />
+                  <ChevronRight />
                 </button>
               </form>
 
-            
+
             </div>
           </motion.div>
         </div>

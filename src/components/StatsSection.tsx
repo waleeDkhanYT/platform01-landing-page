@@ -47,7 +47,7 @@ const StatsSection = () => {
 
   return (
     <section ref={sectionRef} className="py-12 lg:py-16 bg-[#F3F5F7] border-t border-b border-border">
-      <div className="xl:container mx-auto px-4 lg:px-20">
+      <div className="xl:container mx-auto px-4 lg:px-[70px]">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -57,29 +57,29 @@ const StatsSection = () => {
         >
           <div className='flex flex-col lg:flex-row'>
             <span className="text-md text-[#838C94] capitalize pt-16">Our Credentials</span>
-            <h2 className="font-serif px-0 lg:px-16 xl:px-40 text-start font-extrabold text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
+            <h2 className="font-serif px-0 lg:px-16 xl:px-[196px] text-start font-extrabold text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
               Decades of experience.<br />
               Billions in advisory value.
             </h2>
           </div>
           <hr />
-          <div className='mr-[100px] flex justify-start lg:justify-center text-start'>
+          <div className='flex justify-start lg:justify-center text-start xl:mr-0 lg:mr-28'>
             <p className='w-9/12 lg:w-6/12 pt-6 text-[#838C94]'>
               We bring a history of performance across corporate strategy, capital structuring, and investment advisory — built on deep expertise and delivered with precision as a Feasibility Study Professional.
             </p>
           </div>
-          <div className="flex justify-end gap-3">
+          <div className="flex justify-end gap-2">
             <button
               onClick={scrollPrev}
-              className="w-11 h-11 rounded flex items-center justify-center bg-white hover:bg-foreground/5 transition-colors"
+              className="w-12 h-12 rounded flex items-center justify-center bg-white hover:bg-foreground/5 transition-colors"
             >
-              <ChevronLeft className="w-5 h-5 text-foreground" />
+              <ChevronLeft className="w-5 h-5" color='#838C94' />
             </button>
             <button
               onClick={scrollNext}
-              className="w-11 h-11 rounded flex items-center justify-center bg-white hover:bg-foreground/5 transition-colors"
+              className="w-12 h-12 rounded flex items-center justify-center bg-white hover:bg-foreground/5 transition-colors"
             >
-              <ChevronRight className="w-5 h-5 text-foreground" />
+              <ChevronRight className="w-5 h-5" color='#838C94' />
             </button>
           </div>
         </motion.div>
@@ -96,11 +96,11 @@ const StatsSection = () => {
             {stats.map((stat) => (
               <div
                 key={stat.title}
-                className="flex-none w-[280px] lg:w-[310px] p-4"
+                className="flex-none w-[280px] lg:w-[310px]"
               >
                 <h3 className="font-serif text-sm font-bold text-[#838C94] mb-4">{stat.title}</h3>
                 <hr />
-                <p className="text-lg font-sans leading-relaxed font-semibold">{stat.description}</p>
+                <p className="text-lg xl:text-[22px] font-semibold">{stat.description}</p>
               </div>
             ))}
           </div>

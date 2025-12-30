@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/logo.png';
 
@@ -29,7 +29,7 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#F3F5F7]">
-      <div className="xl:container mx-auto px-4 lg:px-20">
+      <div className="xl:container mx-auto px-4 lg:px-12">
         <nav className="flex items-center justify-between">
           {/* Logo */}
           {/* <a href="/" className="flex items-center gap-2">
@@ -42,7 +42,7 @@ const Header = () => {
             </span>
           </a> */}
           <Link to='/'>
-            <img src={Logo} alt="Logo" className='w-48 h-[75px]' />
+            <img src={Logo} alt="Logo" className='w-44 h-[75px]' />
           </Link>
 
           {/* Desktop Navigation */}
@@ -85,7 +85,7 @@ const Header = () => {
           </div>
 
           <button
-            className="hidden lg:block bg-primary text-white p-4">Talk to an Expert</button>
+            className="hidden lg:flex lg:gap-x-2 bg-primary text-white px-4 py-3 mx-6">Talk to an Expert <ChevronRight size={20} /></button>
 
           {/* Mobile Menu Button */}
           <button
