@@ -47,14 +47,14 @@ const StatsSection = () => {
 
   return (
     <div className='bg-[#F3F5F7] -mt-4'>
-      <div className="xl:container mx-auto px-4 lg:px-[68px]">
+      <div className="xl:container mx-auto px-2 md:px-4 lg:px-8">
         {/* <span>1</span> */}
         {/* <p className="pt-4">
           <hr />
           <p className='mt-4 text-[13px] font-sans font-semibold capitalize'>Our Credentials</p>
         </p> */}
 
-        <section ref={sectionRef} className="py-12 lg:py-16">
+        <section ref={sectionRef} className="py-6 md:py-12 lg:py-16">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -62,7 +62,21 @@ const StatsSection = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <div className='flex flex-col lg:flex-row'>
+            <div className='flex flex-col md:flex-row justify-between md:gap-4 pb-4 lg:pb-0'>
+              <div className='flex-1 flex-col'>
+                <p className='text-sm md:text-lg lg:text-xl font-sans font-semibold capitalize text-center md:text-start text-[#838C94] '>Our Credentials</p>
+                <h2 className="text-center md:text-start font-extrabold text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-foreground mb-4">
+                  Decades of experience.<br />
+                  Billions in advisory value.
+                </h2>
+              </div>
+              <div className='flex-1'>
+                <p className='pt-0 lg:pt-8 text-center md:text-end text-[#838C94] text-sm md:text-base'>
+                  We bring a history of performance across corporate strategy, capital structuring, and investment advisory — built on deep expertise and delivered with precision as a Feasibility Study Professional.
+                </p>
+              </div>
+            </div>
+            {/* <div className='flex flex-col lg:flex-row'>
               <p className='text-sm font-sans font-semibold capitalize pt-20 text-[#838C94]'>Our Credentials</p>
               <h2 className="font-serif px-0 lg:px-48 xl:px-52 text-start font-extrabold text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
                 Decades of experience.<br />
@@ -74,17 +88,17 @@ const StatsSection = () => {
               <p className='w-9/12 lg:w-6/12 pt-6 text-[#838C94]'>
                 We bring a history of performance across corporate strategy, capital structuring, and investment advisory — built on deep expertise and delivered with precision as a Feasibility Study Professional.
               </p>
-            </div>
+            </div> */}
             <div className="flex justify-end gap-2">
               <button
                 onClick={scrollPrev}
-                className="w-12 h-12 rounded flex items-center justify-center bg-white hover:bg-foreground/5 transition-colors"
+                className="w-9 md:w-12 h-9 md:h-12 rounded flex items-center justify-center bg-white hover:bg-foreground/5 transition-colors"
               >
                 <ChevronLeft className="w-5 h-5" color='#838C94' />
               </button>
               <button
                 onClick={scrollNext}
-                className="w-12 h-12 rounded flex items-center justify-center bg-white hover:bg-foreground/5 transition-colors"
+                className="w-9 md:w-12 h-9 md:h-12 rounded flex items-center justify-center bg-white hover:bg-foreground/5 transition-colors"
               >
                 <ChevronRight className="w-5 h-5" color='#838C94' />
               </button>
@@ -105,9 +119,9 @@ const StatsSection = () => {
                   key={stat.title}
                   className="flex-none w-[280px] lg:w-[310px]"
                 >
-                  <h3 className="font-serif text-sm font-bold text-[#838C94] mb-4">{stat.title}</h3>
+                  <h3 className="text-sm md:text-base lg:text-lg xl:text-[22px] font-bold text-[#838C94] mb-4">{stat.title}</h3>
                   <hr />
-                  <p className="text-lg xl:text-[22px] font-semibold">{stat.description}</p>
+                  <p className="text-sm md:text-base lg:text-lg xl:text-[22px] font-semibold">{stat.description}</p>
                 </div>
               ))}
             </div>
