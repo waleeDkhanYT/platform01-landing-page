@@ -8,6 +8,7 @@ import PCAwards from '@/assets/pc-award.png';
 import Award1 from '@/assets/award1.png';
 import Award2 from '@/assets/award2.png';
 import Award3 from '@/assets/award3.png';
+import { Link } from 'react-router-dom';
 
 type FormDataType = {
   name: string;
@@ -71,7 +72,9 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 xl:container mx-auto px-2 md:px-4 lg:px-8 pb-12 lg:pt-9 lg:pb-24">
-        <img src={LogoWhite} alt="Logo" className='w-44 h-[75px] mb-4' />
+        <Link to="https://platform01consulting.com/feasibility-study-ksa-2" target='_blank'>
+          <img src={LogoWhite} alt="Logo" className='w-44 h-[75px] mb-4' />
+        </Link>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-6 xl:gap-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -80,7 +83,7 @@ const HeroSection = () => {
             className="text-white col-span-2"
           >
             {/* Market Feasibility Study Services */}
-            <p className="text-sm md:text-lg xl:text-xl text-white mb-6">
+            <p className="text-sm md:text-lg lg:text-xl xl:text-2xl text-white mb-6">
               Our Feasibility Study Expert service has been designed for clients looking for Premium and Bespoke
               Consulting services delivered through our unique "Practitioner-Driven" approach that brings deep
               Industry Expertise with Financial Acumen to deliver High-Quality strategic insights.
