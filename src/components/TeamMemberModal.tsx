@@ -27,7 +27,7 @@ const TeamMemberModal = ({ isOpen, onClose, member }) => {
                         {/* Modal Container */}
                         <div
                             onClick={(e) => e.stopPropagation()}
-                            className="bg-white w-full h-[100dvh] md:h-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl md:max-h-[85vh] md:rounded-lg flex flex-col"
+                            className="bg-white w-full h-[100dvh] md:h-auto md:max-w-2xl lg:max-w-4xl xl:max-w-6xl md:max-h-[85vh] md:rounded-lg flex flex-col"
                         >
                             {/* Header (Sticky) */}
                             <div className="flex justify-between items-center px-4 py-3 border-b shrink-0">
@@ -44,7 +44,7 @@ const TeamMemberModal = ({ isOpen, onClose, member }) => {
 
                             {/* Scrollable Content */}
                             <div className="flex-1 overflow-y-auto">
-                                <div className="grid md:grid-cols-3 gap-6 p-4 md:p-8">
+                                <div className="grid md:grid-cols-3 gap-6 p-4 md:p-6 lg:p-8">
 
                                     {/* Image */}
                                     <div className="bg-gray-100 rounded-lg flex items-center justify-center">

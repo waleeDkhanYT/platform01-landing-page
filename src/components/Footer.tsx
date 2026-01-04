@@ -59,6 +59,7 @@ const Footer = () => {
             <div className="flex gap-3 pb-4">
               {socialLinks.map((social) => (
                 <a
+                  target="_blank"
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}

@@ -114,32 +114,32 @@ const TeamApproach = () => {
       <p className="text-[13px] pt-4 font-sans font-semibold capitalize">
         Our Feasibility Study Firm Consulting Team
       </p> */}
-      <section ref={ref} className="py-20 lg:py-24 bg-background" id="services">
+      <section ref={ref} className="pb-12 md:pb-20 lg:pb-24 bg-background" id="services">
         <div>
           {/* Section Header */}
-          <div className='flex flex-col md:flex-row justify-between md:gap-x-4 md:mb-0 mb-4'>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6 }}
-              className="flex-1 max-w-2xl mb-2 md:mb-16"
-            >
+          {/* <div className='flex flex-col md:flex-row justify-between md:gap-x-4 md:mb-0 mb-4'> */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="mb-2 md:mb-16"
+          >
 
-              <h2 className="font-bold text-xl text-center md:text-start sm:text-3xl md:text-4xl lg:text-5xl text-foreground">
-                Our Feasibility Study Firm Consulting Team
-              </h2>
-            </motion.div>
+            <h2 className="font-bold text-xl text-center sm:text-3xl md:text-4xl lg:text-5xl text-foreground">
+              Our Feasibility Consulting Team
+            </h2>
+          </motion.div>
 
-            {/* Description */}
-            <motion.p
+          {/* Description */}
+          {/* <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="flex-1 text-[#838C94] text-center md:text-end text-sm sm:text-base"
             >
               Our Unique "Practitioner-Driven" Approach <br /> Feasibility Study Consulting Services
-            </motion.p>
-          </div>
+            </motion.p> */}
+          {/* </div> */}
 
           {/* Team Grid */}
           <div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
@@ -171,9 +171,9 @@ const TeamApproach = () => {
                 </div> */}
                 </div>
 
-                <h3 className="text-xl md:text-2xl text-foreground mb-1 font-bold">{member.name}</h3>
-                <p className="text-xs md:text-sm text-[#838C94] font-sans font-medium">{member.description ? member.description : ""}</p>
-                <p className="text-xs md:text-sm text-[#838C94] font-sans font-medium mb-2">{member.role}</p>
+                <h3 className="text-xl md:text-2xl text-foreground leading-5 md:leading-6 mb-1 font-bold">{member.name}</h3>
+                <p className="text-xs md:text-sm text-[#838C94] font-medium">{member.description ? member.description : ""}</p>
+                <p className="text-xs md:text-sm text-[#838C94] font-medium mb-2">{member.role}</p>
                 <hr />
                 <div className='flex justify-between'>
                   <button className='pt-2'>View Bio</button>

@@ -60,7 +60,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#F3F5F7]">
+    <section className="relative min-h-screen overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat h-[90%]"
@@ -70,38 +70,32 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 xl:container mx-auto px-2 md:px-4 lg:px-8 pb-20 lg:pt-12 lg:pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-6 xl:gap-4 items-center">
-
+      <div className="relative z-10 xl:container mx-auto px-2 md:px-4 lg:px-8 pb-12 lg:pt-9 lg:pb-24">
+        <img src={LogoWhite} alt="Logo" className='w-44 h-[75px] mb-4' />
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-6 xl:gap-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-white col-span-2"
           >
-            <img src={LogoWhite} alt="Logo" className='w-44 h-[75px]' />
             {/* Market Feasibility Study Services */}
-            <p className="text-xs md:text-sm font-sans capitalize tracking-[0.2em] text-white mb-6">
+            <p className="text-sm md:text-lg xl:text-xl text-white mb-6">
               Our Feasibility Study Expert service has been designed for clients looking for Premium and Bespoke
               Consulting services delivered through our unique "Practitioner-Driven" approach that brings deep
-              Industry Expertise with Financial Acumen to deliver High-Quality strategic insights. Through our
-              feasibility study consulting services in Saudi Arabia, we deliver investment-grade insights that
-              align with Vision 2030 and institutional financing requirements.
+              Industry Expertise with Financial Acumen to deliver High-Quality strategic insights.
             </p>
 
-            <ul className="text-[10px] md:text-xs font-sans capitalize tracking-[0.2em] text-white mb-6">
-              <li className='flex gap-2'><Check size={20} /> 250+ Projects successfully delivered by Team Members for projects worth above SAR 100 billion</li>
-              <li className='flex gap-2'><Check size={20} /> Accredited Team from Top Business Schools and with Global Professional Qualifications</li>
-              <li className='flex gap-2'><Check size={20} /> Last 12 Months: Prepared SIDF feasibility studies for projects worth over SAR 2 billion</li>
-              <li className='flex gap-2'><Check size={25} /> Experienced Team from Global Financial Institutions, Fortune 500 Companies, Big 4 Advisory, and other Reputable Firms</li>
-              <li className='flex gap-2'><Check size={40} /> Enables financing from DFIs (SIDF, ADF, CDF, etc. included), commercial banks, NBFCs, and
-                institutional investors by ensuring a bankable feasibility study that meets global standards.</li>
+            <ul className="list-inside list-disc text-sm md:text-lg xl:text-xl text-white mb-6">
+              <li>Licensed Consulting firm in Saudi Arabia</li>
+              <li>Projects Size More than SAR 3.0 Billion</li>
+              <li>Qualified and Experienced Consulting Team</li>
+              <li>25+ Feasibilities in Industrial, Healthcare, Energy, Technology and other sectors in Last 24 months</li>
             </ul>
-
-            <div className='flex flex-row gap-x-3 mb-4 lg:mb-0 items-center justify-center lg:justify-start'>
-              <img src={Award1} alt='Award' className='w-12 md:w-20 lg:w-28 h-16 md:h-24 lg:h-28 rounded-md object-contain' />
-              <img src={Award2} alt='Award' className='w-12 md:w-20 lg:w-28 h-16 md:h-24 lg:h-28 rounded-md object-contain' />
-              <img src={Award3} alt='Award' className='w-12 md:w-20 lg:w-28 h-12 md:h-24 lg:h-28 rounded-md object-contain bg-white' />
+            <div className='flex flex-row gap-x-3 mb-4 lg:mb-0 items-center justify-center'>
+              <img src={Award1} alt='Award' className='w-16 md:w-20 lg:w-28 h-20 md:h-24 lg:h-28 rounded-md object-contain' />
+              {/* <img src={Award2} alt='Award' className='w-16 md:w-20 lg:w-28 h-20 md:h-24 lg:h-28 rounded-md object-contain' /> */}
+              <img src={Award3} alt='Award' className='w-16 md:w-20 lg:w-24 h-16 md:h-20 lg:h-24 rounded-md object-contain bg-white' />
             </div>
             {/* 
             <h1 className="font-serif font-extrabold text-2xl md:text-4xl lg:text-5xl xl:text-6xl leading-[1.1] mb-8">
@@ -127,8 +121,8 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className='flex flex-col lg:flex-row items-center justify-between'
           >
-            <div className="bg-white px-6 py-6 shadow-2xl w-full">
-              <h2 className="font-serif font-bold text-3xl mb-3">
+            <div className="bg-white px-4 md:px-6 py-4 md:py-6 shadow-2xl w-full">
+              <h2 className="font-bold text-2xl md:text-3xl mb-3">
                 Submit an Inquiry
               </h2>
               <hr />
