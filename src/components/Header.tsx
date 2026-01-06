@@ -29,24 +29,24 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#F3F5F7]">
-      <div className="xl:container mx-auto px-4 lg:px-12">
+      <div className="xl:container mx-auto px-2 md:px-4 lg:px-8">
         <nav className="flex items-center justify-between">
           {/* Logo */}
           {/* <a href="/" className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-full border-2 border-white/80 flex items-center justify-center">
-              <span className="text-black font-serif text-lg">P</span>
+              <span className="text-black text-lg">P</span>
             </div>
-            <span className="text-black font-sans text-sm font-medium tracking-wide">
+            <span className="text-black text-sm font-medium tracking-wide">
               Platform01<br />
               <span className="text-xs opacity-80">Consulting</span>
             </span>
           </a> */}
           <Link to='/'>
-            <img src={Logo} alt="Logo" className='w-44 h-[75px]' />
+            <img src={Logo} alt="Logo" className='w-36 h-[76px]' />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-2 text-[#000]">
+          {/* <div className="hidden lg:flex items-center gap-2 text-[#000]">
             {navItems.map((item) => (
               <div
                 key={item.label}
@@ -56,7 +56,7 @@ const Header = () => {
               >
                 <a
                   href={item.href}
-                  className="hover:bg-white p-4 text-sm font-sans font-medium transition-colors flex items-center"
+                  className="hover:bg-white p-4 text-sm font-medium transition-colors flex items-center"
                 >
                   {item.label}
                   {item.dropdown && <ChevronDown className="w-3 h-3" />}
@@ -82,10 +82,10 @@ const Header = () => {
                 )}
               </div>
             ))}
-          </div>
+          </div> */}
 
           <button
-            className="hidden lg:flex lg:gap-x-2 bg-primary text-white px-4 py-3 mx-6">Talk to an Expert <ChevronRight size={20} /></button>
+            className="hidden lg:flex lg:gap-x-6 bg-primary text-white px-4 py-3 text-sm">Talk to an Expert <ChevronRight size={20} /></button>
 
           {/* Mobile Menu Button */}
           <button
@@ -108,16 +108,16 @@ const Header = () => {
             className="lg:hidden bg-navy-light"
           >
             <div className="container mx-auto px-4 py-6">
-              {navItems.map((item) => (
+              {/* {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="block py-3 text-white/90 hover:text-white text-base font-sans border-b border-white/10 last:border-0"
+                  className="block py-3 text-white/90 hover:text-white border-b border-white/10 last:border-0"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}
                 </a>
-              ))}
+              ))} */}
               <button
                 className="mt-2 text-sm bg-primary text-white p-4">Talk to an Expert</button>
             </div>
