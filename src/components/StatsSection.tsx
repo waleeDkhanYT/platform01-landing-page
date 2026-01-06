@@ -117,10 +117,9 @@ const StatsSection = () => {
             className="text-center mb-12"
           >
             <div className='text-center mx-auto items-center'>
-              <p className='text-sm md:text-lg lg:text-xl font-sans font-semibold capitalize text-[#838C94]'>Our Credentials</p>
+              {/* <p className='text-sm md:text-lg lg:text-xl font-sans font-semibold capitalize text-[#838C94]'>Our Credentials</p> */}
               <h2 className="font-extrabold text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-foreground mb-4">
-                Decades of experience.<br />
-                Billions in advisory value.
+                Decades of experience, Billions in advisory value
               </h2>
               {/* <div className='flex-1 flex-col'>
                 <p className='text-sm md:text-lg lg:text-xl font-sans font-semibold capitalize text-center md:text-start text-[#838C94]'>Our Credentials</p>

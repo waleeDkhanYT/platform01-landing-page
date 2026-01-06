@@ -109,7 +109,7 @@ const TeamApproach = () => {
   ]
 
   return (
-    <div className="xl:container mx-auto px-4 lg:px-8">
+    <div className="xl:container mx-auto px-4 lg:px-8 pt-4 md:pt-8 lg:pt-16">
       {/* <hr className="mt-12" />
       <p className="text-[13px] pt-4 font-sans font-semibold capitalize">
         Our Feasibility Study Firm Consulting Team
@@ -142,7 +142,7 @@ const TeamApproach = () => {
           {/* </div> */}
 
           {/* Team Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
             {teamMembers.map((member, index) => (
               <motion.div
                 key={member.name}
