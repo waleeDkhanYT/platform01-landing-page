@@ -41,8 +41,8 @@ const Header = () => {
               <span className="text-xs opacity-80">Consulting</span>
             </span>
           </a> */}
-          <Link to='/'>
-            <img src={Logo} alt="Logo" className='w-36 h-[76px]' />
+          <Link to='https://platform01consulting.com/feasibility-study-ksa-2' target='_blank'>
+            <img src={Logo} alt="Logo" className='w-32 h-[76px]' />
           </Link>
 
           {/* Desktop Navigation */}

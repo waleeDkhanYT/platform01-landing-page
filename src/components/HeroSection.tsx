@@ -99,15 +99,15 @@ const HeroSection = () => {
             <div className='flex flex-row gap-x-3 md:gap-x-6 lg:gap-x-12 mb-4 lg:mb-0 items-center justify-center text-center'>
               <div className='flex flex-col items-center justify-center'>
                 <img src={Award1} alt='Award' className='w-12 md:w-16 lg:w-24 h-16 md:h-20 lg:h-24 rounded-md object-contain' />
-                <p className='text-xs md:text-sm lg:text-base xl:text-lg'>Top Consulting Firm<br /> ConsultancyME</p>
+                <p className='text-xs md:text-sm font-bold pt-2'>Top Consulting Firm<br /> ConsultancyME</p>
               </div>
               <div className='flex flex-col items-center justify-center'>
                 <img src={Award2} alt='Award' className='w-12 md:w-16 lg:w-24 h-16 md:h-20 lg:h-24 rounded-md object-contain' />
-                <p className='text-xs md:text-sm lg:text-base xl:text-lg'>Top M&A Advisory<br /> Boutique 2025</p>
+                <p className='text-xs md:text-sm font-bold pt-2'>Top M&A Advisory<br /> Boutique 2025</p>
               </div>
               <div className='flex flex-col items-center justify-center'>
                 <img src={Award3} alt='Award' className='w-12 md:w-16 lg:w-20 h-12 md:h-16 lg:h-20 rounded-md object-contain bg-white' />
-                <p className='text-xs md:text-sm lg:text-base xl:text-lg pt-4'>Top Strategist GCC<br /> Industrials, Healthcare & Technology</p>
+                <p className='text-xs md:text-sm font-bold pt-6'>Top Strategist GCC<br /> Industrials, Healthcare & Technology</p>
               </div>
             </div>
             {/* 
