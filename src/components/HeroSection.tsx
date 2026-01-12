@@ -65,7 +65,8 @@ const HeroSection = () => {
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat h-[768px]"
-        style={{ backgroundImage: `url(${heroBg})` }}
+        // style={{ backgroundImage: `url(${heroBg})`}}
+        style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${heroBg})` }}
       >
         {/* <div className="absolute inset-0 bg-navy/80" /> */}
       </div>
