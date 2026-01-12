@@ -179,7 +179,7 @@ const StatsSection = () => {
                 >
                   <h3 className="text-sm md:text-base lg:text-lg xl:text-[22px] font-bold text-[#838C94] mb-2">{stat.title}</h3>
                   <hr />
-                  <p className="text-sm md:text-base lg:text-lg font-semibold">{stat.description}</p>
+                  <p className="text-sm md:text-base lg:text-xl font-serif font-extrabold">{stat.description}</p>
                 </div>
               ))}
             </div>

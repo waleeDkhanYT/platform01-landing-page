@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { ChevronRight, Check } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 import heroBg from '@/assets/feasibility-study.avif';
-import LogoWhite from '@/assets/logowhite.png';
-import PCAwards from '@/assets/pc-award.png';
+// import LogoWhite from '@/assets/logowhite.png';
+// import PCAwards from '@/assets/pc-award.png';
 import Award1 from '@/assets/award1.png';
 import Award2 from '@/assets/award2.png';
 import Award3 from '@/assets/award3.png';
-import { Link } from 'react-router-dom';
+import Consulting from '@/assets/consulting.png';
 
 type FormDataType = {
   name: string;
@@ -91,11 +91,11 @@ const HeroSection = () => {
             </p>
 
             {/* <h2 className='bg-white uppercase font-sans text-gray-500 px-2 py-1 rounded-md'>why platform01?</h2> */}
-            <ul className="pl-6 pt-2 list-disc text-sm md:text-xl xl:text-2xl font-bold text-white mb-6">
-              <li>Licensed Consulting firm in Saudi Arabia</li>
-              <li>Projects Size More than SAR 3.0 Billion</li>
-              <li>Qualified and Experienced Consulting Team</li>
-              <li>25+ Feasibilities in Industrial, Healthcare, Energy, Technology and other sectors in Last 24 months</li>
+            <ul className="pt-2 text-sm md:text-xl xl:text-2xl font-bold text-white mb-6">
+              <li className='flex gap-x-3'><img src={Consulting} className='h-6 w-6' /> Licensed Consulting firm in Saudi Arabia</li>
+              <li className='flex gap-x-3'><img src={Consulting} className='h-6 w-6' /> Projects Size More than SAR 3.0 Billion</li>
+              <li className='flex gap-x-3'><img src={Consulting} className='h-6 w-6' /> Qualified and Experienced Consulting Team</li>
+              <li className='flex gap-x-3'><img src={Consulting} className='h-6 w-6' /> 25+ Feasibilities in Industrial, Healthcare, Energy, Technology and other sectors in Last 24 months</li>
             </ul>
             <div className='flex flex-row gap-x-3 md:gap-x-6 lg:gap-x-12 mb-4 lg:mb-0 items-center justify-center text-center'>
               <div className='flex flex-col items-center justify-center'>

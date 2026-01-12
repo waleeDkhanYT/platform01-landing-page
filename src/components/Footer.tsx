@@ -33,7 +33,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-navy text-white py-8 lg:py-5">
+    <footer className="bg-navy text-white py-8 lg:py-5 font-serif">
       <div className="xl:container mx-auto px-4 lg:px-8">
         <div className="flex flex-col lg:flex-row justify-between gap-4">
           {/* Logo & Description */}
@@ -51,7 +51,7 @@ const Footer = () => {
               <img src={LogoWhite} alt="Logo" className='w-44 h-[70px] pb-1 mb-1.5' />
             </Link>
             <hr className='opacity-50 w-8/12' />
-            <p className="text-white pt-2 font-sans text-sm max-w-sm leading-relaxed mb-6">
+            <p className="text-white pt-2 max-w-sm mb-6 text-base">
               Platform01 Consulting is a premium Management Consulting firm partnering with visionary leaders across Corporations, Investment firms, Public Institutions, and other organizations seeking bespoke, high-impact services.
             </p>
 
@@ -86,7 +86,7 @@ const Footer = () => {
                 <p className='text-xl font-bold'>كونسلتينغ أرابيا</p>
               </div> */}
               <hr className='opacity-50' />
-              <div className='flex flex-col gap-y-2 lg:gap-y-1 text-sm'>
+              <div className='flex flex-col gap-y-2 lg:gap-y-1 text-base'>
                 <p className='flex pt-2 gap-x-2 lg:gap-x-0'><MapPin size={50} />Floor 5, 4055 King Fahd Road,
                   Samama Holding Tower, P.O. Box 12333,
                   Riyadh, Kingdom of Saudi Arabia</p>
