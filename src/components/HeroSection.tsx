@@ -92,10 +92,10 @@ const HeroSection = () => {
 
             {/* <h2 className='bg-white uppercase font-sans text-gray-500 px-2 py-1 rounded-md'>why platform01?</h2> */}
             <ul className="pt-2 text-sm md:text-xl xl:text-2xl font-bold text-white mb-6">
-              <li className='flex gap-x-3'><img src={Consulting} className='h-6 w-6' /> Licensed Consulting firm in Saudi Arabia</li>
-              <li className='flex gap-x-3'><img src={Consulting} className='h-6 w-6' /> Projects Size More than SAR 3.0 Billion</li>
-              <li className='flex gap-x-3'><img src={Consulting} className='h-6 w-6' /> Qualified and Experienced Consulting Team</li>
-              <li className='flex gap-x-3'><img src={Consulting} className='h-6 w-6' /> 25+ Feasibilities in Industrial, Healthcare, Energy, Technology and other sectors in Last 24 months</li>
+              <li className='flex gap-x-3'><img src={Consulting} className='h-4 md:h-6 w-4 md:w-6' /> Licensed Consulting firm in Saudi Arabia</li>
+              <li className='flex gap-x-3'><img src={Consulting} className='h-4 md:h-6 w-4 md:w-6' /> Projects Size More than SAR 3.0 Billion</li>
+              <li className='flex gap-x-3'><img src={Consulting} className='h-4 md:h-6 w-4 md:w-6' /> Qualified and Experienced Consulting Team</li>
+              <li className='flex gap-x-3'><img src={Consulting} className='h-4 md:h-6 w-4 md:w-6' /> 25+ Feasibilities in Industrial, Healthcare, Energy, Technology and other sectors in Last 24 months</li>
             </ul>
             <div className='flex flex-row gap-x-3 md:gap-x-6 lg:gap-x-12 mb-4 lg:mb-0 items-center justify-center text-center'>
               <div className='flex flex-col items-center justify-center'>
@@ -103,12 +103,12 @@ const HeroSection = () => {
                 <p className='text-xs md:text-sm font-bold pt-2'>Top Consulting Firm<br /> ConsultancyME</p>
               </div>
               <div className='flex flex-col items-center justify-center'>
-                <img src={Award2} alt='Award' className='w-12 md:w-16 lg:w-24 h-16 md:h-20 lg:h-24 rounded-md object-contain' />
-                <p className='text-xs md:text-sm font-bold pt-2'>Top M&A Advisory<br /> Boutique 2025</p>
+                <img src={Award3} alt='Award' className='w-12 md:w-20 lg:w-20 h-12 md:h-16 lg:h-20 rounded-md object-contain bg-white' />
+                <p className='text-xs md:text-sm font-bold pt-4 md:pt-5 lg:pt-6'>Top Strategist GCC<br /> Industrials, Healthcare & Technology</p>
               </div>
-              <div className='flex flex-col items-center justify-center'>
-                <img src={Award3} alt='Award' className='w-12 md:w-16 lg:w-20 h-12 md:h-16 lg:h-20 rounded-md object-contain bg-white' />
-                <p className='text-xs md:text-sm font-bold pt-6'>Top Strategist GCC<br /> Industrials, Healthcare & Technology</p>
+              <div className='flex flex-col w-24 md:w-28 lg:w-28 h-16 md:h-20 lg:h-24 items-center justify-center'>
+                <img src={Award2} alt='Award' className='w-16 md:w-24 rounded-md object-contain bg-white' />
+                <p className='text-xs md:text-sm font-bold pt-3 md:pt-2 lg:pt-5'>Top M&A Advisory<br /> Boutique 2025</p>
               </div>
             </div>
             {/* 
